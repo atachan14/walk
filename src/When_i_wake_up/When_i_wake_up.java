@@ -3,23 +3,31 @@ package When_i_wake_up;
 public class When_i_wake_up {
 
 	/*
-	 * やることリスト プレイヤー周りの座標を取得するメソッド・川周りの情報スッキリする マップ生成用競合回避メソッド マップオブジェ追加
-	 * display周辺のレイアウト その他レイアウト リトライ周辺の挙動、メソッド通過ルートの確認 ステータス(時間・空腹・気持ち・etc)追加
-	 * flag鍵とhomeEnd周辺 flagのインデックス管理を上手いことやるメソッド追加 display周辺のコードを上手いこと分ける
+	 * やることリスト
+	 * 川周りの情報スッキリする
+	 *  マップ生成用競合回避メソッド 
+	 *  マップオブジェ追加
+	 * display周辺のレイアウト 
+	 * その他レイアウト
+	 *  リトライ周辺の挙動、メソッド通過ルートの調整
+	 *   ステータス(時間・空腹・気持ち・etc)追加
+	 * flag鍵とhomeEnd周辺 
+	 * flagのインデックス管理を上手いことやるメソッド追加
+	 * display周辺のコードを上手いこと分ける
 	 * 
 	 * 
 	 * 
 	 * 
 	 */
 
-	public static void debugmenue() {
-		int[] dammyPos = { 5, 5 };
-		int[] dammyNextPos = { 5, 6 };
-		getAround(dammyPos, dammyNextPos);
-		System.out.print("debug end　＞");
-		int stop = new java.util.Scanner(System.in).nextInt();
-		return;
-	}
+//	public static void debugmenue() {
+//		int[] dammyPos = { 5, 5 };
+//		int[] dammyNextPos = { 5, 6 };
+//		getAround(dammyPos, dammyNextPos);
+//		System.out.print("debug end　＞");
+//		int stop = new java.util.Scanner(System.in).nextInt();
+//		return;
+//	}
 
 	public static void main(String[] args) {
 		int mapSize = 11;
@@ -27,11 +35,9 @@ public class When_i_wake_up {
 		int[] pos = new int[2];// 0=x,1=y
 		int[] nextPos = new int[2];
 		int[] flags = new int[10];
-		/*
-		 * flagsメモ ０．週回 １．橋 ２． ３．犬 ４． ５． ６． ７． ８． ９．
-		 */
+		/*flagsメモ ０．週回 １．橋 ２． ３．犬 ４． ５． ６． ７． ８． ９． */
 
-		debugmenue();
+//		debugmenue();
 
 		while (true) {
 			flags[9] = 0;
@@ -75,7 +81,7 @@ public class When_i_wake_up {
 		System.out.println();
 		System.out.println();
 		System.out.println();
-		System.out.println("	目がさめたら夜だった。おうちに帰らなきゃ");
+		System.out.println("	目がさめたら夜だった。おうちに帰らなきゃ。");
 		System.out.println();
 		System.out.println();
 		System.out.println();
@@ -85,6 +91,19 @@ public class When_i_wake_up {
 	}
 
 	public static void walk(int[] flags) {
+		flags[0]++;
+		if (flags[0] < 5) {
+			System.out.println("----------------------------------------");
+			System.out.println();
+			System.out.println();
+			System.out.println("	now walking");
+			System.out.println();
+			System.out.println();
+			System.out.print("				2.walk ＞");
+			int input = new java.util.Scanner(System.in).nextInt();
+			System.out.println("----------------------------------------");
+			return;
+		}
 		if (flags[5] == 0) {
 			System.out.println("----------------------------------------");
 			System.out.println();
@@ -101,6 +120,8 @@ public class When_i_wake_up {
 			default:
 				break;
 			}
+			System.out.println("----------------------------------------");
+			return;
 		} else {
 			System.out.println("----------------------------------------");
 			System.out.println();
@@ -109,8 +130,10 @@ public class When_i_wake_up {
 			System.out.println();
 			System.out.println();
 			System.out.println("				move forward");
+			System.out.println("----------------------------------------");
+			return;
 		}
-		System.out.println("----------------------------------------");
+		
 	}
 
 	public static void mapCreate(int[][] map, int[] pos, int[] nextPos) {
@@ -384,8 +407,8 @@ public class When_i_wake_up {
 		System.out.println();
 		System.out.println();
 
-		if (flags[0] == 0) {
-			System.out.print("		前には");
+		if (flags[0] == 1) {
+			System.out.print("	前には");
 		}
 
 		switch (map[nextPos[0]][nextPos[1]]) {
@@ -434,9 +457,8 @@ public class When_i_wake_up {
 			System.out.println("	バグってる");
 			break;
 		}
-		if (flags[0] == 0) {
+		if (flags[0] == 1) {
 			System.out.print("	ここには");
-			flags[0]++;
 		}
 		switch (map[pos[0]][pos[1]]) {
 		case 0:
