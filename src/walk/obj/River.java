@@ -20,14 +20,16 @@ public class River extends Obj {
 		super(pos);
 	}
 
-	public static Pos genePos(WPM wpm) {
-		ArrayList<Pos> posz=new ArrayList<Pos>(); 
+	public static ArrayList<Obj> generate() {
+		ArrayList<Obj> rivers = new ArrayList<Obj>();
 		for (int x = 0; x < wpm.getMap().length; x++) {
+
 			Pos pos = new Pos(wpm.getMapSize() / 2, x);
-			posz.add(pos);
+			River river = new River(pos);
+			rivers.add(river);
 		}
+		return rivers;
 
 	}
-	
 
 }

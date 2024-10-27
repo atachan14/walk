@@ -2,9 +2,11 @@ package walk.main;
 
 import walk.maps.MapManager;
 import walk.maps.Tile;
+import walk.obj.Obj;
 
 public class WPM {
 	MapManager mapManager = new MapManager(this);
+	Obj obj = new Obj(this);
 	Fase fase = new Fase(this);
 	Player player;
 	Tile[][] map;
@@ -14,6 +16,7 @@ public class WPM {
 	public WPM(int mapSize) {
 		this.mapSize = mapSize;
 		map = new Tile[mapSize][mapSize];
+		
 	}
 
 	public void game() {
