@@ -1,9 +1,7 @@
 package walk.main;
 
-public class Player {
-	Pos p;
+import walk.obj.Obj;
 
-	public Player(Pos pos) {
-		this.p = pos;
-	}
+public class Player extends Obj{
+	
 }

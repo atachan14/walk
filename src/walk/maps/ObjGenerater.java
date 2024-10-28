@@ -1,67 +1,64 @@
 package walk.maps;
 
-import walk.main.WPM;
+import java.util.ArrayList;
+
+import walk.main.Pos;
 import walk.obj.Bridge;
-import walk.obj.NewBridge;
+import walk.obj.Nothing;
 import walk.obj.Obj;
 import walk.obj.OldBridge;
 import walk.obj.River;
 
-public class ObjGenerater {
-	WPM wpm;
-	public ObjGenerater(WPM wpm) {
-		this.wpm = wpm;
-	}
-	
+public class ObjGenerater extends MapGenerater{
+
 	public void setTile() {
-		for (int x = 0; x < wpm.getMap().length; x++) {
-			for (int y = 0; y < wpm.getMap().length; y++) {
+		for (int x = 0; x < getMap().length; x++) {
+			for (int y = 0; y < getMap().length; y++) {
 				Tile tile = new Tile();
-				wpm.getMap()[y][x] = tile;
+				getMap()[y][x] = tile;
 			}
 		}
 	}
 
-	public void generateRiver() {
-		for (int x = 0; x < wpm.getMap().length; x++) {
-			River river = new River();
-			addHasObj(wpm.getMap().length / 2, x, river);
+	public void setNothing() {
+		for (int x = 0; x < getMap().length; x++) {
+			for (int y = 0; y < getMap().length; y++) {
+
+				Nothing nothing = new Nothing(y, x);
+				addMapOfThatTile(nothing);
+			}
 		}
 	}
+	
+	public ArrayList<Obj> riverGene() {
+		ArrayList<Obj> rivers = new ArrayList<Obj>();
+		for (int x = 0; x < getMap().length; x++) {
 
-	public void geneBridge() {
-		Bridge bridge = new Bridge(Bridge.genePos(wpm));
-		addHasObj(bridge);
+			Pos pos = new Pos(getMapSize() / 2, x);
+			River river = new River(pos);
+			rivers.add(river);
+		}
+		return rivers;
 
-		int oldB;
+	}
+	
+	public Obj[] bridgesGenerate() {
+		int y = map.length / 2;
+		int x = new java.util.Random().nextInt(getMap()[y].length - 2);
+		Pos pos = new Pos(y, x);
+		Bridge bridge = new Bridge(pos);
+
+		int oldx = 0;
 		while (true) {
-			oldB = new java.util.Random().nextInt(wpm.getMap()[wpm.getMap().length / 2].length);
-			for (int i = 0; i < 3; i++) {
-				if (oldB == newB - 1 + i) {
-					continue;
-				}
+			oldx = new java.util.Random().nextInt(getMap()[y].length);
+			if (oldx != x && oldx != x + 1 && oldx != x + 2) {
+				break;
 			}
-			break;
 		}
-		OldBridge oldBridge = new OldBridge();
-		addHasObj(wpm.getMap().length / 2, oldB, oldBridge);
-	}
-	
-	public void geneDeepForest() {
-		int x = new java.util.Random().nextInt(wpm.getMapSize());
-		int y = new java.util.Random().nextInt(wpm.getMapSize());
-		
-	}
-	
-	
-	
-	public void addHasObj(int y, int x, Obj obj) {
-		wpm.getMap()[y][x].hasObj.add(obj);
-	}
-	
-	public void addHasObj(Obj obj) {
-		int y=obj.gety();
-		int x = obj.getx();
-		wpm.getMap()[y][x].hasObj.add(obj);
+		Pos oldPos = new Pos(y, oldx);
+		OldBridge oldBridge = new OldBridge(oldPos);
+
+		Obj[] bridges = new Obj[] { bridge, oldBridge };
+		return bridges;
 	}
 }

@@ -1,11 +1,9 @@
 package walk.obj;
 
 import walk.main.Pos;
-import walk.main.WPM;
+import walk.main.NightManager;
 
-public class Obj {
-	static WPM wpm;
-
+public class Obj extends NightManager{
 	Pos pos;
 	int y;
 	int x;
@@ -15,7 +13,7 @@ public class Obj {
 	int objIndex;
 
 	boolean ride;
-	String posMesse;
+	String hereMesse;
 	String nextMesse;
 	String aroundMesse;
 	String cantWalkMesse;
@@ -28,6 +26,12 @@ public class Obj {
 		this.pos = pos;
 		this.y = pos.gety();
 		this.x = pos.getx();
+	}
+	
+	public Obj(int y, int x) {
+		this.pos = new Pos(y,x);
+		this.y = y;
+		this.x = x;
 	}
 		
 	public Pos getPos() {
@@ -72,8 +76,8 @@ public class Obj {
 		return ride;
 	}
 
-	public String getPosMesse() {
-		return posMesse;
+	public String getHereMesse() {
+		return hereMesse;
 	}
 
 	public String getNextMesse() {
@@ -82,9 +86,5 @@ public class Obj {
 
 	public String getAroundMesse() {
 		return aroundMesse;
-	}
-
-	public static void setWPM(WPM wpmInst) {
-		wpm = wpmInst;
 	}
 }

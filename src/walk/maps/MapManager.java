@@ -2,49 +2,60 @@ package walk.maps;
 
 import java.util.ArrayList;
 
-import walk.main.WPM;
+import walk.main.Pos;
+import walk.main.NightManager;
 import walk.obj.*;
 
-public class MapManager {
-	WPM wpm;
-	ObjGenerater obG;
-
-	public MapManager(WPM wpm) {
-		this.wpm = wpm;
-		this.obG = new ObjGenerater(wpm);
+public class MapManager extends NightManager{
+	
+	
+	public MapManager() {
+		
 	}
 
-	public void generateMap() {
-		obG.setTile();
-		addMapOfTile(River.generate());
-		addMapOfTile(Bridge.bridgesGenerate());
-		obG.generateKey();
-		obG.generateHome();
-	}
+	
 
-	public void addMapOfTile(Obj obj) {
+	public int getMapSize() {
+		return mapSize;
+	}
+	
+	public Tile[][] getMap() {
+		return map;
+	}
+	
+	public Obj getMapTop(Pos pos) {
+		int y = pos.gety();
+		int x = pos.getx();
+		return map[y][x].getTop();
+	}
+	
+
+
+	public void addMapOfThatTile(Obj obj) {
 		int y = obj.gety();
 		int x = obj.getx();
-		wpm.getMap()[y][x].hasObj.add(obj);
+		getMap()[y][x].hasObj.add(obj);
 	}
 
-	public void addMapOfTile(ArrayList<Obj> objs) {
+	public void addMapOfThatTile(ArrayList<Obj> objs) {
 		for (Obj obj : objs) {
 			int y = obj.gety();
 			int x = obj.getx();
-			wpm.getMap()[y][x].hasObj.add(obj);
+			getMap()[y][x].hasObj.add(obj);
 		}
 	}
 
-	public void addMapOfTile(Obj[] objs) {
+	public void addMapOfThatTile(Obj[] objs) {
 		for (Obj obj : objs) {
 			int y = obj.gety();
 			int x = obj.getx();
-			wpm.getMap()[y][x].hasObj.add(obj);
+			getMap()[y][x].hasObj.add(obj);
 		}
 	}
 
-	public void addMapOfTile(int y, int x, Obj obj) {
-		wpm.getMap()[y][x].hasObj.add(obj);
+	public void addMapOfThatTile(int y, int x, Obj obj) {
+		getMap()[y][x].hasObj.add(obj);
 	}
+
+	
 }

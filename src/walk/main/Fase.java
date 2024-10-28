@@ -1,10 +1,9 @@
 package walk.main;
 
-public class Fase {
-WPM wpm;
+public class Fase extends NightManager{
+
 	
-	public Fase(WPM wpm) {
-		this.wpm=wpm;
+	public Fase() {
 	}
 	public void start() {
 		System.out.println("--------------------");
@@ -14,25 +13,22 @@ WPM wpm;
 		System.out.println("　　おうちに帰らなきゃ");
 		System.out.println();
 		System.out.println();
+		new java.util.Scanner(System.in).nextLine();
 	}
 
 	public void walk() {
 		System.out.println("--------------------");
-		System.out.println();
-		System.out.println();
 		System.out.println("　now walking");
-		System.out.println("　　");
-		System.out.println();
-		System.out.println();
+		new java.util.Scanner(System.in).nextLine();
 	}
 
 	public void overDisplay() {
 		System.out.println("---------------------");
 		System.out.println();
 		System.out.println();
-		getHereMesse();
-		getNextMesse();
-		searchOtherMesse();
+		getMapTop(p.getPos()).getHereMesse();
+		getMapTop(p.getPos()).getNextMesse();
+//		searchOtherMesse();
 		System.out.println();
 		System.out.println();
 	}
@@ -40,4 +36,7 @@ WPM wpm;
 	public void underDisplay() {
 		
 	}
+	
+	
+	
 }
