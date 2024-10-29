@@ -63,6 +63,10 @@ public class Night {
 		return map;
 	}
 	
+	public Tile[][] getMapTile() {
+		return map;
+	}
+	
 	public Pos getMapPos(int y , int x) {
 		return map[y][x].getPos();
 	}

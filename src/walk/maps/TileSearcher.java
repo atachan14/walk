@@ -1,8 +1,9 @@
 package walk.maps;
 
+import walk.main.Night;
 import walk.main.Pos;
 
-public class TileSearcher extends MapManager {
+public class TileSearcher extends Night {
 
 	public Pos bridge() {
 		int y = getMap().length / 2;
@@ -26,10 +27,10 @@ public class TileSearcher extends MapManager {
 		return pos;
 	}
 
-//	public Pos alonePos() {
-//		int y = new java.util.Random().nextInt(getMap().length);
-//		int x = new java.util.Random().nextInt(getMap()[y].length);
-//		if (aroundIsNothing(y,x)) {
-//		}
-//	}
+	public Tile aloneTile() {
+		int y = new java.util.Random().nextInt(getMap().length);
+		int x = new java.util.Random().nextInt(getMap()[y].length);
+		if (getMapTile(y,x).IsAroundNothing()) {
+		}
+	}
 }
