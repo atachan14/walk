@@ -1,12 +1,18 @@
 package walk.maps;
 
-import walk.obj.Bridge;
-import walk.obj.River;
+import walk.main.Night;
 
-public class MapGenerater extends MapManager {
-	ObjGenerater objGenerater = new ObjGenerater();
-	public void selectNight(int nightCount) {
-		switch (nightCount) {
+public class MapGenerater extends Night {
+	ObjGenerater objGenerater;
+	TileSearcher tileSearcher;
+
+	public MapGenerater() {
+		this.objGenerater = new ObjGenerater();
+		this.tileSearcher = new TileSearcher();
+	}
+
+	public void selectNight() {
+		switch (getNightCount()) {
 		case 1:
 			night1gene();
 			break;
@@ -25,13 +31,14 @@ public class MapGenerater extends MapManager {
 	}
 
 	public void night1gene() {
-		this.mapSize = 11;
-		map = new Tile[mapSize][mapSize];
+		setMapSize(11);
+		setMap(new Tile[getMapSize()][getMapSize()]);
+
 		objGenerater.setTile();
 		objGenerater.setNothing();
 		addMapOfThatTile(objGenerater.riverGene());
 		addMapOfThatTile(objGenerater.bridgesGenerate());
-
+		tileSearcher.
 	}
 
 	public void night2gene() {

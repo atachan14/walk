@@ -3,7 +3,7 @@ package walk.obj;
 public class Nothing extends Obj{
 	String name = " 無 ";
 	char nam = '無';
-	int objIndex = 0;
+	int objIndex = 101;
 
 	String hereMesse="なにもない";
 	String nextMesse="なにもない";

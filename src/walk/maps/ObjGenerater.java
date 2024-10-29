@@ -14,7 +14,7 @@ public class ObjGenerater extends MapGenerater{
 	public void setTile() {
 		for (int x = 0; x < getMap().length; x++) {
 			for (int y = 0; y < getMap().length; y++) {
-				Tile tile = new Tile();
+				Tile tile = new Tile(y,x);
 				getMap()[y][x] = tile;
 			}
 		}
@@ -43,7 +43,7 @@ public class ObjGenerater extends MapGenerater{
 	}
 	
 	public Obj[] bridgesGenerate() {
-		int y = map.length / 2;
+		int y = getMap().length / 2;
 		int x = new java.util.Random().nextInt(getMap()[y].length - 2);
 		Pos pos = new Pos(y, x);
 		Bridge bridge = new Bridge(pos);

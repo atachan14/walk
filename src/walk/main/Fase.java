@@ -1,10 +1,10 @@
 package walk.main;
 
-public class Fase extends NightManager{
+public class Fase extends Night {
 
-	
 	public Fase() {
 	}
+
 	public void start() {
 		System.out.println("--------------------");
 		System.out.println();
@@ -28,15 +28,13 @@ public class Fase extends NightManager{
 		System.out.println();
 		getMapTop(p.getPos()).getHereMesse();
 		getMapTop(p.getPos()).getNextMesse();
-//		searchOtherMesse();
+		//		searchOtherMesse();
 		System.out.println();
 		System.out.println();
 	}
-	
+
 	public void underDisplay() {
-		
+
 	}
-	
-	
-	
+
 }

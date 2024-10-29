@@ -5,7 +5,7 @@ import walk.main.Pos;
 public class OldBridge extends Obj {
 	String name = "旧橋";
 	char nam = '旧';
-	int objIndex = 121;
+	int objIndex = 221;
 
 	boolean ride;
 	String hereMesse;

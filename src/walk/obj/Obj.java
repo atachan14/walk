@@ -1,16 +1,16 @@
 package walk.obj;
 
+import walk.main.Night;
 import walk.main.Pos;
-import walk.main.NightManager;
 
-public class Obj extends NightManager{
+public class Obj extends Night{
 	Pos pos;
 	int y;
 	int x;
 
 	String name;
 	char nam;
-	int objIndex;
+	int index;//1xx:何もない 2xx:川 3xx:森
 
 	boolean ride;
 	String hereMesse;
@@ -68,8 +68,8 @@ public class Obj extends NightManager{
 		return nam;
 	}
 
-	public int getObjIndex() {
-		return objIndex;
+	public int getIndex() {
+		return index;
 	}
 
 	public boolean isRide() {

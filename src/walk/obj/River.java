@@ -1,13 +1,11 @@
 package walk.obj;
 
-import java.util.ArrayList;
-
 import walk.main.Pos;
 
 public class River extends Obj {
 	String name = " 川 ";
 	char nam = '川';
-	int objIndex = 110;
+	int objIndex = 210;
 
 	boolean ride = false;
 	String hereMesse;

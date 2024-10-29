@@ -1,12 +1,11 @@
 package walk.obj;
 
 import walk.main.Pos;
-import walk.main.NightManager;
 
 public class Bridge extends Obj {
 	String name = " 橋 ";
 	char nam = '橋';
-	int objIndex = 120;
+	int objIndex = 220;
 
 	boolean ride;
 	String hereMesse;
