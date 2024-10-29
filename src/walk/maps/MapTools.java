@@ -1,22 +1,28 @@
 package walk.maps;
 
 import walk.main.Night;
-import walk.main.Pos;
 
-public class MapTools extends Night{
+public class MapTools {
+	Night night;
 
-	public MapTools() {
-		
+	public MapTools(Night night) {
+		this.night = night;
 	}
 
-	public boolean pointIsNothing(Pos pos) {
-		int y = pos.gety();
-		int x = pos.getx();
-		if (getMapTop(pos).getIndex()/100==1) {
-			return true;
+	public void cheetMap() {
+		for (int i = 0; i < night.getMap().length; i++) {
+			for (int j = 0; j < night.getMap().length; j++) {
+				if (night.getMap()[i][j].getTop().getIndex() / 10 == 0) {
+					System.out.print("[00" + night.getMap()[i][j].getTop().getIndex() + "]");
+				} else if (night.getMap()[i][j].getTop().getIndex() / 100 == 0) {
+					System.out.print("[0" + night.getMap()[i][j].getTop().getIndex() + "]");
+				} else {
+					System.out.print("[" + night.getMap()[i][j].getTop().getIndex() + "]");
+				}
+			}
+			System.out.println();
 		}
-		return false;
+		System.out.println("-----------------------------");
 	}
 
-	
 }

@@ -3,18 +3,13 @@ package walk.obj;
 import walk.main.Pos;
 
 public class OldBridge extends Obj {
-	String name = "旧橋";
-	char nam = '旧';
-	int objIndex = 221;
-
-	boolean ride;
-	String hereMesse;
-	String nextMesse;
-	String aroundMesse;
-	String cantWalkMesse;
 
 	public OldBridge(Pos pos) {
 		super(pos);
+
+		this.name = "旧橋";
+		this.nam = '旧';
+		this.index = 221;
 	}
 }
 

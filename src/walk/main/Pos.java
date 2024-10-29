@@ -1,6 +1,6 @@
 package walk.main;
 
-public class Pos extends Night {
+public class Pos{
 	int y;
 	int x;
 	Pos[] aroundPos = new Pos[10];
@@ -12,6 +12,11 @@ public class Pos extends Night {
 	public Pos(int x, int y) {
 		this.y = y;
 		this.x = x;
+	}
+	
+	public Pos(Pos pos) {
+		this.y = pos.y;
+		this.x = pos.x;
 	}
 
 	//	public void setyx(int y, int x) {

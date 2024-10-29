@@ -14,7 +14,7 @@ public class Menu {
 	}
 
 	public void start() {
-		System.out.println("   　　	　1.new play 2.continue ＞");
+		System.out.print("   　　	　1.new play 2.continue ＞");
 		Night night;
 		int input = new java.util.Scanner(System.in).nextInt();
 		switch (input) {

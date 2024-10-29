@@ -1,18 +1,23 @@
 package walk.maps;
 
 import walk.main.Night;
+import walk.main.Player;
 
-public class MapGenerater extends Night {
+public class MapGenerater {
+	Night night;
 	ObjGenerater objGenerater;
 	TileSearcher tileSearcher;
+	MapTools mapTools;
 
-	public MapGenerater() {
-		this.objGenerater = new ObjGenerater();
-		this.tileSearcher = new TileSearcher();
+	public MapGenerater(Night night) {
+		this.night = night;
+		this.mapTools = new MapTools(night);
+		this.objGenerater = new ObjGenerater(night);
+		this.tileSearcher = new TileSearcher(night);
 	}
 
 	public void selectNight() {
-		switch (getNightCount()) {
+		switch (night.getNightCount()) {
 		case 1:
 			night1gene();
 			break;
@@ -31,14 +36,19 @@ public class MapGenerater extends Night {
 	}
 
 	public void night1gene() {
-		setMapSize(11);
-		setMap(new Tile[getMapSize()][getMapSize()]);
+		night.setMapSize(11);
+		night.setMap(new Tile[night.getMapSize()][night.getMapSize()]);
 
+		System.out.println("go set Tile");
 		objGenerater.setTile();
 		objGenerater.setNothing();
-		addMapOfThatTile(objGenerater.riverGene());
-		addMapOfThatTile(objGenerater.bridgesGenerate());
-		tileSearcher.
+		mapTools.cheetMap();
+		night.addTileOfMap(objGenerater.riverGene());
+		night.addTileOfMap(objGenerater.bridgesGenerate());
+		System.out.println("setBidges");
+
+		night.setPlayer(new Player(tileSearcher.getAloneTile().getPos()));
+
 	}
 
 	public void night2gene() {
