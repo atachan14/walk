@@ -39,13 +39,12 @@ public class MapGenerater {
 		night.setMapSize(11);
 		night.setMap(new Tile[night.getMapSize()][night.getMapSize()]);
 
-		System.out.println("go set Tile");
 		objGenerater.setTile();
 		objGenerater.setNothing();
-		mapTools.cheetMap();
+		
 		night.addTileOfMap(objGenerater.riverGene());
 		night.addTileOfMap(objGenerater.bridgesGenerate());
-		System.out.println("setBidges");
+	
 
 		night.setPlayer(new Player(tileSearcher.getAloneTile().getPos()));
 

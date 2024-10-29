@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 import walk.maps.MapGenerater;
 import walk.maps.MapManager;
+import walk.maps.MapTools;
 import walk.maps.Tile;
 import walk.obj.Obj;
 
 public class Night {
 	MapGenerater mapGenerater;
 	Fase fase;
+	MapTools mapTools;
 
 	int nightCount = 0;
 	Tile[][] map;
@@ -24,6 +26,8 @@ public class Night {
 		this.nightCount = nightCount;
 		mapGenerater = new MapGenerater(this);
 		fase = new Fase(this);
+		mapTools = new MapTools(this);
+		Tile.setNight(this);
 	}
 
 	public void game() {
@@ -34,6 +38,7 @@ public class Night {
 			fase.walk();
 			fase.overDisplay();
 			fase.underDisplay();
+			mapTools.cheetMap();
 		}
 	}
 

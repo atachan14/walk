@@ -7,7 +7,8 @@ import walk.main.Player;
 import walk.main.Pos;
 import walk.obj.Obj;
 
-public class Tile extends Night {
+public class Tile {
+	static Night night;
 	public ArrayList<Obj> hasObj = new ArrayList<Obj>();
 	public ArrayList<Player> hasPlayer = new ArrayList<Player>();
 	Pos pos;
@@ -33,8 +34,8 @@ public class Tile extends Night {
 		for (int i = 1; i < aroundTile.length; i++) {
 			int aroundy = y + 1 - (i - 1) / 3;
 			int aroundx = x - 1 + (i - 1) % 3;
-			System.out.println(i+",y"+y+",aroundy"+aroundy+",x"+x+",aroundx"+aroundx);
-			aroundTile[i] = getMap()[aroundy][aroundx];
+//			System.out.println(i+",y"+y+",aroundy"+aroundy+",x"+x+",aroundx"+aroundx);
+			aroundTile[i] = night.getMap()[aroundy][aroundx];
 		}
 		
 		return aroundTile;
@@ -59,6 +60,10 @@ public class Tile extends Night {
 		}
 		System.out.println("isAroundNothing ");
 		return false;
+	}
+	
+	public static void setNight(Night nightInst) {
+		night = nightInst;
 	}
 
 }
