@@ -3,15 +3,15 @@ package walk.main;
 import java.util.ArrayList;
 
 import walk.maps.MapGenerater;
-import walk.maps.MapManager;
 import walk.maps.MapTools;
+import walk.maps.Player;
+import walk.maps.Pos;
 import walk.maps.Tile;
 import walk.obj.Obj;
 
 public class Night {
 	MapGenerater mapGenerater;
 	Fase fase;
-	MapTools mapTools;
 
 	int nightCount = 0;
 	Tile[][] map;
@@ -26,8 +26,8 @@ public class Night {
 		this.nightCount = nightCount;
 		mapGenerater = new MapGenerater(this);
 		fase = new Fase(this);
-		mapTools = new MapTools(this);
 		Tile.setNight(this);
+		MapTools.setNight(this);
 	}
 
 	public void game() {
@@ -38,7 +38,7 @@ public class Night {
 			fase.walk();
 			fase.overDisplay();
 			fase.underDisplay();
-			mapTools.cheetMap();
+			MapTools.cheetMap();
 		}
 	}
 
@@ -54,6 +54,10 @@ public class Night {
 		this.map = map;
 	}
 
+	public Player getPlayer() {
+		return p;
+	}
+	
 	public void setPlayer(Player p) {
 		this.p = p;
 		System.out.println("setPlayer");

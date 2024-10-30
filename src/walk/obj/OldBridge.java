@@ -1,6 +1,6 @@
 package walk.obj;
 
-import walk.main.Pos;
+import walk.maps.Pos;
 
 public class OldBridge extends Obj {
 

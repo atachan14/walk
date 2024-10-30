@@ -1,9 +1,9 @@
-package walk.main;
+package walk.maps;
 
 public class InTile {
 	Pos pos;
-	int y;
-	int x;
+	int posy;
+	int posx;
 
 	public InTile() {
 
@@ -11,14 +11,14 @@ public class InTile {
 
 	public InTile(Pos pos) {
 		this.pos = pos;
-		this.y = pos.gety();
-		this.x = pos.getx();
+		this.posy = pos.gety();
+		this.posx = pos.getx();
 	}
 
 	public InTile(int y, int x) {
 		this.pos = new Pos(y, x);
-		this.y = y;
-		this.x = x;
+		this.posy = y;
+		this.posx = x;
 	}
 	
 	public Pos getPos() {
@@ -27,23 +27,23 @@ public class InTile {
 
 	public void setPos(Pos pos) {
 		this.pos = pos;
-		this.y = pos.gety();
-		this.x = pos.getx();
+		this.posy = pos.gety();
+		this.posx = pos.getx();
 	}
 
 	public int gety() {
-		return y;
+		return posy;
 	}
 
 	public void sety(int y) {
-		this.y = y;
+		this.posy = y;
 	}
 
 	public int getx() {
-		return x;
+		return posx;
 	}
 
 	public void setx(int x) {
-		this.x = x;
+		this.posx = x;
 	}
 }

@@ -1,7 +1,6 @@
 package walk.maps;
 
 import walk.main.Night;
-import walk.main.Pos;
 
 public class TileSearcher {
 Night night;

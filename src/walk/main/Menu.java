@@ -20,7 +20,7 @@ public class Menu {
 		switch (input) {
 		case 1:
 			night = new Night();
-			night.setUp(1);
+			night.setUp(0);
 			night.game();
 			break;
 		case 2:

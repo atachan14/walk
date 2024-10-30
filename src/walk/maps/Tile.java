@@ -3,8 +3,6 @@ package walk.maps;
 import java.util.ArrayList;
 
 import walk.main.Night;
-import walk.main.Player;
-import walk.main.Pos;
 import walk.obj.Obj;
 
 public class Tile {

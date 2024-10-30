@@ -1,7 +1,6 @@
 package walk.maps;
 
 import walk.main.Night;
-import walk.main.Player;
 
 public class MapGenerater {
 	Night night;
@@ -11,13 +10,16 @@ public class MapGenerater {
 
 	public MapGenerater(Night night) {
 		this.night = night;
-		this.mapTools = new MapTools(night);
+		this.mapTools = new MapTools();
 		this.objGenerater = new ObjGenerater(night);
 		this.tileSearcher = new TileSearcher(night);
 	}
 
 	public void selectNight() {
 		switch (night.getNightCount()) {
+		case 0:
+			nightDebug();
+			break;
 		case 1:
 			night1gene();
 			break;
@@ -35,6 +37,17 @@ public class MapGenerater {
 		}
 	}
 
+	public void nightDebug() {
+		night.setMapSize(11);
+		night.setMap(new Tile[night.getMapSize()][night.getMapSize()]);
+
+		objGenerater.setTile();
+		objGenerater.setNothing();
+		
+		night.setPlayer(new Player(tileSearcher.getAloneTile().getPos()));
+
+	}
+	
 	public void night1gene() {
 		night.setMapSize(11);
 		night.setMap(new Tile[night.getMapSize()][night.getMapSize()]);
@@ -45,7 +58,8 @@ public class MapGenerater {
 		night.addTileOfMap(objGenerater.riverGene());
 		night.addTileOfMap(objGenerater.bridgesGenerate());
 	
-
+		System.out.println(night.getMapTop(0,0).getName());
+		System.out.println("setP前"+tileSearcher.getAloneTile().getTop().getName());
 		night.setPlayer(new Player(tileSearcher.getAloneTile().getPos()));
 
 	}

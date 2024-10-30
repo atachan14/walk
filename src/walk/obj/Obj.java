@@ -1,8 +1,8 @@
 package walk.obj;
 
-import walk.main.InTile;
 import walk.main.Night;
-import walk.main.Pos;
+import walk.maps.InTile;
+import walk.maps.Pos;
 
 public class Obj extends InTile{
 	String name;

@@ -1,6 +1,6 @@
-package walk.main;
+package walk.maps;
 
-public class Pos{
+public class Pos {
 	int y;
 	int x;
 	Pos[] aroundPos = new Pos[10];
@@ -13,7 +13,7 @@ public class Pos{
 		this.y = y;
 		this.x = x;
 	}
-	
+
 	public Pos(Pos pos) {
 		this.y = pos.y;
 		this.x = pos.x;
@@ -31,7 +31,26 @@ public class Pos{
 	public int getx() {
 		return x;
 	}
+	
+	public int getyx() {
+		return y+x;
+	}
 
+	public void sety(int y) {
+		this.y = y;
+	}
+
+	public void setx(int x) {
+		this.x = x;
+	}
+
+	public void setyx(int y,int x) {
+		this.y=y;
+		this.x=x;
+	}
+	
+	
+	
 	//	public boolean getHasAround() {
 	//		return hasAround;
 	//	}
