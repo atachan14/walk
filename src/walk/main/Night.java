@@ -16,6 +16,7 @@ public class Night {
 	int nightCount = 0;
 	Tile[][] map;
 	int mapSize;
+
 	Player p;
 
 	public Night() {
@@ -49,7 +50,7 @@ public class Night {
 	public Tile[][] getMap() {
 		return map;
 	}
-	
+
 	public void setMap(Tile[][] map) {
 		this.map = map;
 	}
@@ -57,7 +58,7 @@ public class Night {
 	public Player getPlayer() {
 		return p;
 	}
-	
+
 	public void setPlayer(Player p) {
 		this.p = p;
 		System.out.println("setPlayer");

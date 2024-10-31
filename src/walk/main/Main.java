@@ -1,4 +1,26 @@
 package walk.main;
+/*
+ *　PosとTile[][] mapの相性
+ *　Tile[][] mapはもっと良い型があったりしないか
+ *
+ *　システム系の継承
+ *
+ *　Nightのp
+ *
+ *
+ *
+ *　（たぶんない）objでposを保存する必要
+ *　
+ *
+ *
+ *
+ *
+ *
+ */
+
+
+
+
 
 public class Main {
 	public static void main(String[] args) {

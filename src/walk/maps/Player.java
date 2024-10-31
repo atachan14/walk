@@ -1,12 +1,9 @@
 package walk.maps;
 
-public class Player extends InTile {
+public class Player extends TileRider {
 
 	int direction = 2;
-	Pos now
 	Pos nextPos = new Pos(0, 0);
-	int nexty = 0;
-	int nextx = 0;
 
 	public Player() {
 		this.direction = new java.util.Random().nextInt(4);
@@ -33,52 +30,52 @@ public class Player extends InTile {
 	}
 
 	public int getNexty() {
-		return nexty;
+		return nextPos.y;
 	}
 
 	public int getNextx() {
-		return nextx;
+		return nextPos.x;
 	}
 
 	public void updateNextPos() {
-		System.out.println("y"+pos.gety()+",x"+pos.getx());
-		System.out.println("nexty"+nextPos.gety()+",nextx"+nextPos.getx());
-		System.out.println("direction"+direction);
-		
+		System.out.println("y" + pos.gety() + ",x" + pos.getx());
+		System.out.println("nexty" + nextPos.gety() + ",nextx" + nextPos.getx());
+		System.out.println("direction" + direction);
+
 		switch (direction) {
 		case 0:
-			nexty = posy + 1;
-			nextx = posx;
+			nextPos.y = pos.y + 1;
+			nextPos.x = pos.x;
 			break;
 		case 1:
-			nexty = posy;
-			nextx = posx - 1;
+			nextPos.y = pos.y;
+			nextPos.x = pos.x - 1;
 			break;
 		case 2:
-			nexty = posy - 1;
-			nextx = posx;
+			nextPos.y = pos.y - 1;
+			nextPos.x = pos.x;
 			break;
 		case 3:
-			nexty = posy;
-			nextx = posx + 1;
+			nextPos.y = pos.y;
+			nextPos.x = pos.x + 1;
 			break;
 		default:
 			System.out.println("updateNextPosバグ");
 			break;
 		}
 		System.out.println("idougo");
-		System.out.println("y"+posy+",x"+posx);
-		System.out.println("nexty"+nexty+",nextx"+nextx);
-		System.out.println("direction"+direction);
-			
+		System.out.println("y" + pos.y + ",x" + pos.x);
+		System.out.println("nexty" + nextPos.y + ",nextx" + nextPos.x);
+		System.out.println("direction" + direction);
 
-		nexty = MapTools.edgeOverExe(nexty);
-		nextx = MapTools.edgeOverExe(nextx);
-		nextPos.setyx(nexty, nextx);
+		nextPos.y = MapTools.edgeOverExe(nextPos.y);
+		nextPos.x = MapTools.edgeOverExe(nextPos.x);
+		nextPos.setyx(nextPos.y, nextPos.x);
 	}
 
 	public void moveForward() {
-		setPos = nextPos;
+		sety(nextPos.y);
+		setx(nextPos.x);
 		updateNextPos();
 	}
 

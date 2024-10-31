@@ -1,10 +1,10 @@
 package walk.obj;
 
 import walk.main.Night;
-import walk.maps.InTile;
+import walk.maps.TileRider;
 import walk.maps.Pos;
 
-public class Obj extends InTile{
+public class Obj extends TileRider{
 	String name;
 	char nam;
 	int index;

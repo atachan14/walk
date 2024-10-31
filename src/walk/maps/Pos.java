@@ -3,11 +3,10 @@ package walk.maps;
 public class Pos {
 	int y;
 	int x;
-	Pos[] aroundPos = new Pos[10];
-	//	boolean hasAround = false;
+	// boolean hasAround = false;
 
-	//	public Pos() {
-	//	}
+	// public Pos() {
+	// }
 
 	public Pos(int y, int x) {
 		this.y = y;
@@ -19,10 +18,10 @@ public class Pos {
 		this.x = pos.x;
 	}
 
-	//	public void setyx(int y, int x) {
-	//		this.y = y;
-	//		this.x = x;
-	//	}
+	// public void setyx(int y, int x) {
+	// this.y = y;
+	// this.x = x;
+	// }
 
 	public int gety() {
 		return y;
@@ -31,9 +30,9 @@ public class Pos {
 	public int getx() {
 		return x;
 	}
-	
-	public int getyx() {
-		return y+x;
+
+	public String getyx() {
+		return y + "," + x;
 	}
 
 	public void sety(int y) {
@@ -44,15 +43,13 @@ public class Pos {
 		this.x = x;
 	}
 
-	public void setyx(int y,int x) {
-		this.y=y;
-		this.x=x;
+	public void setyx(int y, int x) {
+		this.y = y;
+		this.x = x;
 	}
-	
-	
-	
-	//	public boolean getHasAround() {
-	//		return hasAround;
-	//	}
+
+	// public boolean getHasAround() {
+	// return hasAround;
+	// }
 
 }

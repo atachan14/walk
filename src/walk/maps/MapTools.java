@@ -31,20 +31,20 @@ public class MapTools {
 				index = night.getMap()[y][x].getTop().getIndex();
 
 				if (py == y && px == x) {
-					System.out.print("≪" + night.getMap()[y][x].getTop().getIndex() + "≫");
+					System.out.print("≪" + night.getMap()[y][x].getTop().getNam() + "≫");
 					continue;
 				}
 				if (nexty == y && nextx == x) {
-					System.out.print("〈" + night.getMap()[y][x].getTop().getIndex() + "〉");
+					System.out.print("＞" + night.getMap()[y][x].getTop().getNam() + "＜");
 					continue;
 				}
 
 				if (index / 10 == 0) {
-					System.out.print(" [00" + night.getMap()[y][x].getTop().getIndex() + "] ");
+					System.out.print(" [00" + night.getMap()[y][x].getTop().getNam() + "] ");
 				} else if (index / 100 == 0) {
-					System.out.print(" [0" + night.getMap()[y][x].getTop().getIndex() + "] ");
+					System.out.print(" [0" + night.getMap()[y][x].getTop().getNam() + "] ");
 				} else {
-					System.out.print(" [" + night.getMap()[y][x].getTop().getIndex() + "] ");
+					System.out.print(" [" + night.getMap()[y][x].getTop().getNam() + "] ");
 				}
 			}
 			System.out.println();

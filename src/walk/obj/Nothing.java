@@ -7,7 +7,7 @@ public class Nothing extends Obj {
 		super(y, x);
 		
 		this.name = " 無 ";
-		this.nam = '無';
+		this.nam = '　';
 		this.index = 101;
 
 		this.hereMesse = "なにもない";
