@@ -40,20 +40,6 @@ public class TileSearcher {
 		}
 	}
 
-	public Pos bridge2nd(Pos ngpos) {
-		int y = night.getMap().length / 2;
-		int x = 0;
-		int ngx = ngpos.getx();
-		while (true) {
-			x = new java.util.Random().nextInt(night.getMap()[y].length);
-			if (x != ngx && x != ngx + 1 && x != ngx + 2) {
-				break;
-			}
-		}
-		Pos pos = new Pos(y, x);
-		return pos;
-	}
-
 	public Tile getAloneTile() {
 		int count = 0;
 		while (count < 100) {

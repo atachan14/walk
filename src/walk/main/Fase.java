@@ -20,17 +20,17 @@ public class Fase {
 
 	public void walk() {
 		System.out.println("--------------------");
-		System.out.println("　now walking");
+		System.out.print("　now walking　　2.前に進む　＞");
 		new java.util.Scanner(System.in).nextLine();
 	}
 
 	public void overDisplay() {
 		System.out.println("---------------------");
+		System.out.println(night.getTopByPos(night.p.getPos()).getHereMesse());
 		System.out.println();
 		System.out.println();
-		System.out.println(night.getMapTop(night.p.getPos()).getName());
-		night.getMapTop(night.p.getPos()).getHereMesse();
-		night.getMapTop(night.p.getPos()).getNextMesse();
+		System.out.println(night.getTopByPos(night.p.getNextPos()).getNextMesse());
+		
 		// searchOtherMesse();
 		System.out.println();
 		System.out.println();

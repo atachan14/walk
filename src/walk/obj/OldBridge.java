@@ -8,6 +8,9 @@ public class OldBridge extends Obj {
 		this.name = "旧橋";
 		this.nam = '旧';
 		this.index = 221;
+		
+		this.hereMesse = "ボロボロの橋だ　崩れちゃうかも";
+		this.nextMesse = "橋だ";
 	}
 }
 

@@ -27,6 +27,10 @@ public class TileRider {
 	public int getx() {
 		return pos.x;
 	}
+	
+	public String getyx() {
+		return pos.y+","+pos.x;
+	}
 
 	public void setPos(Pos pos) {
 		this.pos = pos;

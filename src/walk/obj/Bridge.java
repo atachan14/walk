@@ -8,6 +8,9 @@ public class Bridge extends Obj {
 		this.name = " 橋 ";
 		this.nam = '橋';
 		this.index = 220;
+		
+		this.hereMesse = "橋の上にいる";
+		this.nextMesse = "橋だ";
 	}
 
 //	public static Obj generate() {

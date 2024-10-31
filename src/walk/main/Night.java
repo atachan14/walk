@@ -92,10 +92,10 @@ public class Night {
 		return map[y][x].hasObj.get(map[y][x].hasObj.size() - 1);
 	}
 
-	public Obj getMapTop(Pos pos) {
+	public Obj getTopByPos(Pos pos) {
 		int y = pos.gety();
 		int x = pos.getx();
-		return map[y][x].hasObj.get(map[y][x].hasObj.size() - 1);
+		return map[y][x].getTop();
 	}
 
 	public void addTileOfMap(Obj obj) {
