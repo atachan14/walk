@@ -3,16 +3,19 @@ package walk.maps;
 import walk.main.Night;
 
 public class MapGenerater {
-	Night night;
+	static Night night;
 	ObjGenerater objGenerater;
 	TileSearcher tileSearcher;
 	MapTools mapTools;
 
-	public MapGenerater(Night night) {
-		this.night = night;
+	public MapGenerater() {
 		this.mapTools = new MapTools();
-		this.objGenerater = new ObjGenerater(night);
-		this.tileSearcher = new TileSearcher(night);
+		this.objGenerater = new ObjGenerater();
+		this.tileSearcher = new TileSearcher();
+	}
+	
+	public static void setNight(Night nightInst) {
+		night = nightInst;
 	}
 
 	public void selectNight() {

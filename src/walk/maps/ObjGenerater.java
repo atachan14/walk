@@ -10,10 +10,13 @@ import walk.obj.OldBridge;
 import walk.obj.River;
 
 public class ObjGenerater {
-	Night night;
+	static Night night;
+	TileSearcher tileSearcher=new TileSearcher();
 	
-	public ObjGenerater(Night night) {
-		this.night = night;
+	public static void setNight(Night nightInst) {
+		night = nightInst;
+	}
+	public ObjGenerater() {
 	}
 
 	public void setTile() {
@@ -35,6 +38,19 @@ public class ObjGenerater {
 		}
 	}
 
+	public void geneForIndex(int index,Tile tile) {
+		switch(index) {
+		case 101:
+			new Nothing(tile);
+			break;
+		case 210:
+			
+		}
+	}
+	
+	
+	
+	
 	public ArrayList<Obj> riverGene() {
 		ArrayList<Obj> rivers = new ArrayList<Obj>();
 		for (int x = 0; x < night.getMap().length; x++) {

@@ -1,8 +1,8 @@
 package walk.obj;
 
-import walk.main.Night;
-import walk.maps.TileRider;
 import walk.maps.Pos;
+import walk.maps.Tile;
+import walk.maps.TileRider;
 
 public class Obj extends TileRider{
 	String name;
@@ -19,6 +19,10 @@ public class Obj extends TileRider{
 		
 	}
 	
+	public Obj(Tile tile) {
+		tile.hasObj.add(this);
+	}
+	
 	public Obj(Pos pos) {
 		super(pos);
 	}
@@ -26,8 +30,6 @@ public class Obj extends TileRider{
 	public Obj(int y, int x) {
 		super(y,x);
 	}
-		
-
 
 	public String getName() {
 		return name;

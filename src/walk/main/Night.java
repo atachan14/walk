@@ -7,6 +7,7 @@ import walk.maps.MapTools;
 import walk.maps.Player;
 import walk.maps.Pos;
 import walk.maps.Tile;
+import walk.maps.TileSearcher;
 import walk.obj.Obj;
 
 public class Night {
@@ -25,10 +26,15 @@ public class Night {
 
 	public void setUp(int nightCount) {
 		this.nightCount = nightCount;
-		mapGenerater = new MapGenerater(this);
-		fase = new Fase(this);
-		Tile.setNight(this);
+		
+		MapGenerater.setNight(this);
 		MapTools.setNight(this);
+		Tile.setNight(this);
+		TileSearcher.setNight(this);
+		
+		mapGenerater = new MapGenerater();
+		fase = new Fase(this);
+		
 	}
 
 	public void game() {

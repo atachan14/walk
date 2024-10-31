@@ -3,9 +3,13 @@ package walk.maps;
 import walk.main.Night;
 
 public class TileSearcher {
-Night night;
-	public TileSearcher(Night night) {
-		this.night = night;
+	static Night night;
+
+	public static void setNight(Night nightInst) {
+		night = nightInst;
+	}
+
+	public TileSearcher() {
 	}
 
 	public Pos bridge() {
@@ -42,6 +46,6 @@ Night night;
 		}
 		//error用メッセ
 		System.out.println("TileSearchr.aloneTile();100count");
-		return new Tile(-100,-100);
+		return new Tile(-100, -100);
 	}
 }
