@@ -1,11 +1,9 @@
 package walk.obj;
 
-import walk.maps.Pos;
-
 public class Bridge extends Obj {
 
-	public Bridge(Pos pos) {
-		super(pos);
+	public Bridge() {
+		super();
 
 		this.name = " 橋 ";
 		this.nam = '橋';

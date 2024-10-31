@@ -12,7 +12,7 @@ public class Tile {
 	Pos pos;
 	int y;
 	int x;
-	Tile[] aroundTile = new Tile[10];
+	Tile[] aroundTiles = new Tile[10];
 
 	public Tile(int y, int x) {
 		this.pos = new Pos(y, x);
@@ -29,37 +29,50 @@ public class Tile {
 	}
 
 	public Tile[] getAroundTile() {
-		for (int i = 1; i < aroundTile.length; i++) {
+		for (int i = 1; i < aroundTiles.length; i++) {
 			int aroundy = y + 1 - (i - 1) / 3;
 			int aroundx = x - 1 + (i - 1) % 3;
-//			System.out.println(i+",y"+y+",aroundy"+aroundy+",x"+x+",aroundx"+aroundx);
-			aroundTile[i] = night.getMap()[aroundy][aroundx];
+			MapTools.edgeOverExe(aroundy);
+			MapTools.edgeOverExe(aroundx);
+			System.out.println(aroundy+"y,x"+aroundx);
+			
+			aroundTiles[i] = night.getMap()[aroundy][aroundx];
 		}
-		
-		return aroundTile;
-		// hasAround = true;
+		return aroundTiles;
 	}
 
 	public boolean isNothing() {
-		System.out.println(getTop().getIndex());
 		if (getTop().getIndex() / 100 == 1) {
-			System.out.println("isNothing true");
 			return true;
 		}
-		System.out.println("isNothing false");
+		return false;
+	}
+
+	public boolean isIndexPer10(int index) {
+		if (getTop().getIndex() / 10 == index) {
+			return true;
+		}
 		return false;
 	}
 
 	public boolean isAroundNothing() {
 		for (int i = 1; i < 10; i++) {
-			if (getAroundTile()[i].isNothing()) {
-				return true;
+			if (!getAroundTile()[i].isNothing()) {
+				return false;
 			}
 		}
-		System.out.println("isAroundNothing ");
-		return false;
+		return true;
 	}
-	
+
+	public boolean isAroundIndexPer10(int index) {
+		for (int i = 1; i < 10; i++) {
+			if (!getAroundTile()[i].isIndexPer10(index)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	public static void setNight(Night nightInst) {
 		night = nightInst;
 	}

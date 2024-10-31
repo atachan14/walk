@@ -17,10 +17,27 @@ public class TileSearcher {
 		}
 	}
 
-	public static void addToBridgeZone(int index) {
+	public static void addToRiverZone(int index) {
+		int y = night.getMapSize() / 2;
+		for (int x = 0; x < night.getMap()[y].length; x++) {
+			night.getMap()[y][x].hasObj.add(ObjGenerater.geneForIndex(index));
+		}
+	}
+
+	public static void addToBridgePoint(int index) {
 		int y = night.getMap().length / 2;
-		int x = new java.util.Random().nextInt(night.getMap()[y].length - 2);
-		night.getMap()[y][x].hasObj.add(ObjGenerater.geneForIndex(index));
+		int count=0;
+		while (true) {
+			int x = new java.util.Random().nextInt(night.getMap()[y].length - 2);
+			if (!night.getMap()[y][x].isAroundIndexPer10(22)) {
+				night.getMap()[y][x].hasObj.add(ObjGenerater.geneForIndex(index));
+				return;
+			}
+			count++;
+			if(count==50) {
+				System.out.println("addToBridgePointが見つからん");
+			}
+		}
 	}
 
 	public Pos bridge2nd(Pos ngpos) {

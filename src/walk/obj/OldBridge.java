@@ -1,11 +1,9 @@
 package walk.obj;
 
-import walk.maps.Pos;
-
 public class OldBridge extends Obj {
 
-	public OldBridge(Pos pos) {
-		super(pos);
+	public OldBridge() {
+		super();
 
 		this.name = "旧橋";
 		this.nam = '旧';

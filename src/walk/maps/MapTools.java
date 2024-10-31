@@ -20,10 +20,6 @@ public class MapTools {
 		int px = night.getPlayer().getx();
 		int nexty = night.getPlayer().getNexty();
 		int nextx = night.getPlayer().getNextx();
-		System.out.println();
-		System.out.println("cheetMap");
-		System.out.println("y" + night.getPlayer().gety() + ",x" + night.getPlayer().getx());
-		System.out.println("nexty" + night.getPlayer().getNexty() + ",nextx" + night.getPlayer().getNextx());
 
 		for (int y = 0; y < night.getMap().length; y++) {
 			for (int x = 0; x < night.getMap().length; x++) {
@@ -53,8 +49,6 @@ public class MapTools {
 	}
 
 	public static int edgeOverExe(int check) {
-		System.out.println("edgeOver" + night.getMapSize());
-
 		if (check > night.getMap().length - 1)
 			check = 0;
 		if (check < 0)
