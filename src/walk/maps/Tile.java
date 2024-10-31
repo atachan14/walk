@@ -62,9 +62,9 @@ public class Tile {
 		return true;
 	}
 
-	public boolean isAroundIndexPer10(int index) {
+	public boolean isAroundHasntIndexPer10(int index) {
 		for (int i = 1; i < 10; i++) {
-			if (!getAroundTile()[i].isIndexPer10(index)) {
+			if (getAroundTile()[i].isIndexPer10(index)) {
 				return false;
 			}
 		}

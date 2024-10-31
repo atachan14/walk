@@ -26,16 +26,11 @@ public class TileSearcher {
 
 	public static void addToBridgePoint(int index) {
 		int y = night.getMap().length / 2;
-		int count=0;
 		while (true) {
 			int x = new java.util.Random().nextInt(night.getMap()[y].length - 2);
-			if (!night.getMap()[y][x].isAroundIndexPer10(22)) {
+			if (night.getMap()[y][x].isAroundHasntIndexPer10(22)) {
 				night.getMap()[y][x].hasObj.add(ObjGenerater.geneForIndex(index));
 				return;
-			}
-			count++;
-			if(count==50) {
-				System.out.println("addToBridgePointが見つからん");
 			}
 		}
 	}
