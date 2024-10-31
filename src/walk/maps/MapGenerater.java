@@ -13,7 +13,7 @@ public class MapGenerater {
 		this.objGenerater = new ObjGenerater();
 		this.tileSearcher = new TileSearcher();
 	}
-	
+
 	public static void setNight(Night nightInst) {
 		night = nightInst;
 	}
@@ -45,24 +45,26 @@ public class MapGenerater {
 		night.setMap(new Tile[night.getMapSize()][night.getMapSize()]);
 
 		objGenerater.setTile();
-		objGenerater.setNothing();
-		
+		TileSearcher.addToAll(101);
+		TileSearcher.addToBridgeZone(210);
+		System.out.println("addToAllato" + night.getMap()[0][0].hasObj.get(0).getName());
+
 		night.setPlayer(new Player(tileSearcher.getAloneTile().getPos()));
 
 	}
-	
+
 	public void night1gene() {
 		night.setMapSize(11);
 		night.setMap(new Tile[night.getMapSize()][night.getMapSize()]);
 
 		objGenerater.setTile();
 		objGenerater.setNothing();
-		
+
 		night.addTileOfMap(objGenerater.riverGene());
 		night.addTileOfMap(objGenerater.bridgesGenerate());
-	
-		System.out.println(night.getMapTop(0,0).getName());
-		System.out.println("setP前"+tileSearcher.getAloneTile().getTop().getName());
+
+		System.out.println(night.getMapTop(0, 0).getName());
+		System.out.println("setP前" + tileSearcher.getAloneTile().getTop().getName());
 		night.setPlayer(new Player(tileSearcher.getAloneTile().getPos()));
 
 	}

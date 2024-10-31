@@ -7,6 +7,7 @@ public class TileRider {
 
 	}
 
+
 	public TileRider(Pos pos) {
 		this.pos = pos;
 	}

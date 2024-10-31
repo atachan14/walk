@@ -9,15 +9,18 @@ public class TileSearcher {
 		night = nightInst;
 	}
 
-	public TileSearcher() {
+	public static void addToAll(int index) {
+		for (int y = 0; y < night.getMap().length; y++) {
+			for (int x = 0; x < night.getMap().length; x++) {
+				night.getMap()[y][x].hasObj.add(ObjGenerater.geneForIndex(index));
+			}
+		}
 	}
 
-	public Pos bridge() {
+	public static void addToBridgeZone(int index) {
 		int y = night.getMap().length / 2;
 		int x = new java.util.Random().nextInt(night.getMap()[y].length - 2);
-		Pos pos = new Pos(y, x);
-
-		return pos;
+		night.getMap()[y][x].hasObj.add(ObjGenerater.geneForIndex(index));
 	}
 
 	public Pos bridge2nd(Pos ngpos) {

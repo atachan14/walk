@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import walk.maps.MapGenerater;
 import walk.maps.MapTools;
+import walk.maps.ObjGenerater;
 import walk.maps.Player;
 import walk.maps.Pos;
 import walk.maps.Tile;
@@ -26,15 +27,16 @@ public class Night {
 
 	public void setUp(int nightCount) {
 		this.nightCount = nightCount;
-		
+
 		MapGenerater.setNight(this);
 		MapTools.setNight(this);
+		ObjGenerater.setNight(this);
 		Tile.setNight(this);
 		TileSearcher.setNight(this);
-		
+
 		mapGenerater = new MapGenerater();
 		fase = new Fase(this);
-		
+
 	}
 
 	public void game() {
@@ -97,11 +99,11 @@ public class Night {
 	}
 
 	public void addTileOfMap(Obj obj) {
-//		System.out.println(obj.getName());
+		//		System.out.println(obj.getName());
 		int y = obj.gety();
 		int x = obj.getx();
 		getMap()[y][x].hasObj.add(obj);
-//		System.out.println(getMap()[y][x].hasObj.get(getMap()[y][x].hasObj.size() - 1).getName());
+		//		System.out.println(getMap()[y][x].hasObj.get(getMap()[y][x].hasObj.size() - 1).getName());
 	}
 
 	public void addTileOfMap(ArrayList<Obj> objs) {

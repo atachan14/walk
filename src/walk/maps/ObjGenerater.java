@@ -11,11 +11,12 @@ import walk.obj.River;
 
 public class ObjGenerater {
 	static Night night;
-	TileSearcher tileSearcher=new TileSearcher();
-	
+	TileSearcher tileSearcher = new TileSearcher();
+
 	public static void setNight(Night nightInst) {
 		night = nightInst;
 	}
+
 	public ObjGenerater() {
 	}
 
@@ -38,19 +39,20 @@ public class ObjGenerater {
 		}
 	}
 
-	public void geneForIndex(int index,Tile tile) {
-		switch(index) {
+	public static Obj geneForIndex(int index) {
+		switch (index) {
 		case 101:
-			new Nothing(tile);
-			break;
+			return new Nothing();
+
 		case 210:
+			return new River();
 			
+		default:
+			System.out.println("geneForIndex Error");
+			return null;
 		}
 	}
-	
-	
-	
-	
+
 	public ArrayList<Obj> riverGene() {
 		ArrayList<Obj> rivers = new ArrayList<Obj>();
 		for (int x = 0; x < night.getMap().length; x++) {
