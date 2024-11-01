@@ -20,7 +20,7 @@ public class Night {
 	Tile[][] map;
 	int mapSize;
 
-	Player p;
+	public static Player p;
 
 	public Night() {
 
@@ -45,11 +45,11 @@ public class Night {
 		mapGenerater.selectNight();
 
 		fase.start();
+		Fase.walk();
 		while (true) {
-			fase.walk();
+			MapTools.cheetMap();		
 			fase.overDisplay();
 			fase.underDisplay();
-			MapTools.cheetMap();
 		}
 	}
 

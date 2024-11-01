@@ -18,7 +18,7 @@ public class Fase {
 		new java.util.Scanner(System.in).nextLine();
 	}
 
-	public void walk() {
+	public static void walk() {
 		System.out.println("--------------------");
 		System.out.print("　now walking　　2.walk　＞");
 		new java.util.Scanner(System.in).nextLine();

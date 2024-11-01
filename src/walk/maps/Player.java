@@ -1,5 +1,7 @@
 package walk.maps;
 
+import walk.main.Fase;
+
 public class Player extends TileRider {
 
 	int direction = 2;
@@ -67,6 +69,7 @@ public class Player extends TileRider {
 	}
 
 	public void moveForward() {
+		Fase.walk();
 		sety(nextPos.y);
 		setx(nextPos.x);
 		updateNextPos();

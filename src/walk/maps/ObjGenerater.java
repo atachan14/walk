@@ -2,6 +2,7 @@ package walk.maps;
 
 import walk.main.Night;
 import walk.obj.Bridge;
+import walk.obj.Dog;
 import walk.obj.HomeGate;
 import walk.obj.Nothing;
 import walk.obj.Obj;
@@ -43,7 +44,7 @@ public class ObjGenerater {
 			return new OldBridge();
 			
 		case 310:
-			return new dog();
+			return new Dog();
 
 		case 410:
 			return new HomeGate();

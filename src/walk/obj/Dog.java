@@ -13,5 +13,9 @@ public class Dog extends Obj{
 	
 	public void effectHere() {
 		night.p.dcLeft();
+		night.p.dcLeft();
+		night.p.moveForward();
+		night.p.moveForward();
+
 	}
 }

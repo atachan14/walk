@@ -3,7 +3,7 @@ package walk.maps;
 import walk.main.Night;
 
 public class TileRider {
-	static Night night;
+	public static Night night;
 	Pos pos;
 
 	public TileRider() {
