@@ -20,7 +20,7 @@ public class Fase {
 
 	public void walk() {
 		System.out.println("--------------------");
-		System.out.print("　now walking　　2.前に進む　＞");
+		System.out.print("　now walking　　2.walk　＞");
 		new java.util.Scanner(System.in).nextLine();
 	}
 

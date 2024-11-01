@@ -8,6 +8,7 @@ import walk.maps.ObjGenerater;
 import walk.maps.Player;
 import walk.maps.Pos;
 import walk.maps.Tile;
+import walk.maps.TileRider;
 import walk.maps.TileSearcher;
 import walk.obj.Obj;
 
@@ -30,6 +31,7 @@ public class Night {
 
 		MapGenerater.setNight(this);
 		MapTools.setNight(this);
+		TileRider.setNight(this);
 		ObjGenerater.setNight(this);
 		Tile.setNight(this);
 		TileSearcher.setNight(this);

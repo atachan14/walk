@@ -1,8 +1,6 @@
 package walk.obj;
 
 public class River extends Obj {
-
-
 	
 	public River() {
 		this.name = " 川 ";

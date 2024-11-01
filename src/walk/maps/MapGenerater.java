@@ -49,6 +49,7 @@ public class MapGenerater {
 		TileSearcher.addToRiverZone(210);
 		TileSearcher.addToBridgePoint(220);
 		TileSearcher.addToBridgePoint(221);
+		TileSearcher.addToAlonePoint(410);
 
 		night.setPlayer(new Player(tileSearcher.getAloneTile().getPos()));
 

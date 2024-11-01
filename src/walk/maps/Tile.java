@@ -32,7 +32,6 @@ public class Tile {
 		for (int i = 1; i < aroundTiles.length; i++) {
 			int aroundy = MapTools.edgeOverExe(y + 1 - (i - 1) / 3);
 			int aroundx = MapTools.edgeOverExe(x - 1 + (i - 1) % 3);
-			System.out.println(aroundy+"y,x"+aroundx);
 
 			aroundTiles[i] = night.getMap()[aroundy][aroundx];
 		}
@@ -76,3 +75,5 @@ public class Tile {
 	}
 
 }
+
+

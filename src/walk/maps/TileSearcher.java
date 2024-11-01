@@ -35,7 +35,11 @@ public class TileSearcher {
 		}
 	}
 
-	public Tile getAloneTile() {
+	public static void addToAlonePoint(int index) {
+		getAloneTile().hasObj.add(ObjGenerater.geneForIndex(index));
+	}
+
+	public static Tile getAloneTile() {
 		int count = 0;
 		while (count < 100) {
 			int y = new java.util.Random().nextInt(night.getMap().length);

@@ -4,7 +4,7 @@ import walk.maps.Pos;
 import walk.maps.Tile;
 import walk.maps.TileRider;
 
-public class Obj extends TileRider{
+public class Obj extends TileRider {
 	String name;
 	char nam;
 	int index;
@@ -16,19 +16,33 @@ public class Obj extends TileRider{
 	String cantWalkMesse;
 
 	public Obj() {
-		
+
 	}
-	
+
 	public Obj(Tile tile) {
 		tile.hasObj.add(this);
 	}
-	
+
 	public Obj(Pos pos) {
 		super(pos);
 	}
-	
+
 	public Obj(int y, int x) {
-		super(y,x);
+		super(y, x);
+	}
+
+	public void hereExe() {
+		printHereMesse();
+		effectHere();
+	}
+
+	public void printHereMesse() {
+		System.out.println(hereMesse);
+
+	}
+
+	public void effectHere() {
+
 	}
 
 	public String getName() {
@@ -58,4 +72,6 @@ public class Obj extends TileRider{
 	public String getAroundMesse() {
 		return aroundMesse;
 	}
+
+
 }

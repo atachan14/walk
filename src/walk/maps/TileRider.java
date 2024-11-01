@@ -1,12 +1,14 @@
 package walk.maps;
 
+import walk.main.Night;
+
 public class TileRider {
+	static Night night;
 	Pos pos;
 
 	public TileRider() {
 
 	}
-
 
 	public TileRider(Pos pos) {
 		this.pos = pos;
@@ -27,9 +29,9 @@ public class TileRider {
 	public int getx() {
 		return pos.x;
 	}
-	
+
 	public String getyx() {
-		return pos.y+","+pos.x;
+		return pos.y + "," + pos.x;
 	}
 
 	public void setPos(Pos pos) {
@@ -42,5 +44,9 @@ public class TileRider {
 
 	public void setx(int x) {
 		this.pos.x = x;
+	}
+
+	public static void setNight(Night nightInst) {
+		night = nightInst;
 	}
 }

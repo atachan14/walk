@@ -38,9 +38,6 @@ public class Player extends TileRider {
 	}
 
 	public void updateNextPos() {
-		System.out.println("y" + pos.gety() + ",x" + pos.getx());
-		System.out.println("nexty" + nextPos.gety() + ",nextx" + nextPos.getx());
-		System.out.println("direction" + direction);
 
 		switch (direction) {
 		case 0:
@@ -63,10 +60,6 @@ public class Player extends TileRider {
 			System.out.println("updateNextPosバグ");
 			break;
 		}
-		System.out.println("idougo");
-		System.out.println("y" + pos.y + ",x" + pos.x);
-		System.out.println("nexty" + nextPos.y + ",nextx" + nextPos.x);
-		System.out.println("direction" + direction);
 
 		nextPos.y = MapTools.edgeOverExe(nextPos.y);
 		nextPos.x = MapTools.edgeOverExe(nextPos.x);
