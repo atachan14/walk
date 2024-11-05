@@ -9,5 +9,6 @@ public class HomeGate extends Obj {
 
 		this.hereMesse = "";
 		this.nextMesse = "家だ！";
+		
 	}
 }

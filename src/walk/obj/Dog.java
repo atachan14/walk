@@ -17,5 +17,6 @@ public class Dog extends Obj{
 		night.p.moveForward();
 		night.p.moveForward();
 
+		
 	}
 }

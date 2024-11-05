@@ -20,7 +20,7 @@ public class Night {
 	Tile[][] map;
 	int mapSize;
 
-	public static Player p;
+	public Player p;
 
 	public Night() {
 
