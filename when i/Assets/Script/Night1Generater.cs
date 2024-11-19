@@ -20,7 +20,7 @@ public class Night1Generater : MonoBehaviour
         
     }
 
-    public static void Generate()
+    public void Generate()
     {
         mapSTO.SetMapSizeX(11);
         mapSTO.SetMapSizeY(11);

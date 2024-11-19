@@ -23,8 +23,7 @@ public class NightSelecter: MonoBehaviour
         switch (gameSettingSTO.GetSelectNight())
         {
             case 1:
-                Night1Generater.Generate();
-                break;
+                transform.GetChild.GetCompornent
         }
     }
 
